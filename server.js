@@ -31,13 +31,15 @@ app.use(express.static('public'));
 const user = require('./routes/user');
 const quiztypes = require('./routes/quiztypes');
 const quiz = require('./routes/quiz');
+const result = require('./routes/result');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/user', user);
 app.use('/quiztypes', quiztypes);
-app.use('quiz', quiz);
+app.use('/quiz', quiz);
+app.use('/result', result);
 // Note: mount other resources here, using the same pattern above
 
 // Home page

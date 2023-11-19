@@ -9,19 +9,26 @@ const express = require('express');
 const router  = express.Router();
 const userQueries = require('../db/queries/users');
 
-// get quiz categories to browse public quizzes - same as home page
+// path /quiztypes - redirect to index.ejs homepage to display quiz types to choose from
 router.get('/', (req, res) => {
-  return res.render(/*EJS template file name goes here */);
+  return res.redirect('../index');
 });
 
-// get list of public quizzes under a category type
+// get list of public quizzes under a category type - path for front end to hit /quiztypes/:id
 router.get('/:id', (req, res) => {
-  
+  const categoryId = req.params.id;
+
+  /* Implement helper function that retrieves a list of quizzes with category Id from the database*/
+  /* Render EJS template with quiz list passed in as a variable so list of quizzes of that type can be displayed */
+
 });
 
-//submit new quiz created by user
+//submit new quiz created by user - path for front end to hit /quiztypes/:id
 router.post('/:id', (req, res) => {
   
+/* Implement helper function that adds a new quiz to the database. Return new quiz Id*/
+/* Redirect to single quiz page for quiz that was just created. Path is in the quiz.js file. Use new quiz id*/
+
 });
 
 module.exports = router;
