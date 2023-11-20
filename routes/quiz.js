@@ -26,7 +26,7 @@ router.post('/:id', (req, res) => {
   /*Return number of correct answers*/
   /*Implement helper function to update the database with the user's quiz score and return a result id*/
   /*Redirect to the result page (path is in the user.js file) using the result id as a url parameter*/
-
+  //extra comment
 });
 
 module.exports = router;
