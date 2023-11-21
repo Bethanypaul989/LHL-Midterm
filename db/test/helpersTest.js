@@ -1,5 +1,5 @@
 
-const { getQuestionsForQuiz } = require('../queries/helpers');
+const { getQuestionsForQuiz } = require('../queries/getQuestionsForQuiz');
 
 
 const quizId = 1; // Replace with the actual quiz ID you want to retrieve questions for

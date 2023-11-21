@@ -1,13 +1,5 @@
 const db = require('../connection');
 
-// const getUsers = () => {
-//   return db.query('SELECT * FROM user;')
-//     .then(data => {
-//       return data.rows;
-//     });
-// };
-
-// module.exports = { getUsers };
 
 // Helper function to get questions by quiz category
 const getQuestionsForQuiz = (quizId) => {
