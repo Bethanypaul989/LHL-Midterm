@@ -11,7 +11,7 @@ const router  = express.Router();
 
 //create new quiz - path for front end to hit /createquiz
 router.get('/', (req, res) => {
-  return res.render('/createQuiz');
+  return res.render('./createQuiz');
 });
 
 module.exports = router;

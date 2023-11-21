@@ -16,7 +16,7 @@ router.get('/:id', (req, res) => {
   //below function only gets the quiz questions, not the answer options. Need to add the answer options and then do something before rendering
   /*quizTypeQueries. getQuestionsForQuiz(quizId)
   .then((questions) => {*/
-    return res.render('/quizzes-show'/*, questions*/);
+    return res.render('./quizzes-show'/*, questions*/);
  /* });*/
   /*Implement helper function that retrieves single quiz with matching Id from the database*/
   /*Render EJS template for single quiz page. Pass quiz data from database in as a variable*/

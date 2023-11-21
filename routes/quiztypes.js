@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
 
   /* Implement helper function that retrieves a list of quizzes with category Id from the database*/
   /* Render EJS template with quiz list passed in as a variable so list of quizzes of that type can be displayed */
-  return res.render('/quizzes' /*need to add template vars - quiz list from database*/);
+  return res.render('./quizzes' /*need to add template vars - quiz list from database*/);
 
 });
 
