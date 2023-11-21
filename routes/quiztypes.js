@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const quizTypeQueries = require('../db/queries/helpers');
+const userQueries = require('../db/queries/users');
 
 // path /quiztypes - redirect to index.ejs homepage to display quiz types to choose from
 router.get('/', (req, res) => {
@@ -17,10 +17,10 @@ router.get('/', (req, res) => {
 // get list of public quizzes under a category type - path for front end to hit /quiztypes/:id
 router.get('/:id', (req, res) => {
   const categoryId = req.params.id;
-  quizTypeQueries. getQuestionsForQuiz(categoryId)
-  .then((questions) => {
-    return res.render(/*"ejs template file name goes here",*/ questions);
-  });
+
+  /* Implement helper function that retrieves a list of quizzes with category Id from the database*/
+  /* Render EJS template with quiz list passed in as a variable so list of quizzes of that type can be displayed */
+
 });
 
 //submit new quiz created by user - path for front end to hit /quiztypes/:id
