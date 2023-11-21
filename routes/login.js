@@ -9,7 +9,7 @@ const express = require('express');
 const router  = express.Router();
 const db = require('../db/connection');
 
-//bypass login http;//localhost:8080/login/1
+//bypass login http://localhost:8080/login/1
 router.get('/:id', (req, res) => {
   res.cookie('user_id', req.params.id);
   return res.redirect('../index');
