@@ -12,6 +12,7 @@ const router  = express.Router();
 router.get('/:id', (req, res) => {
   /*Implement helper function that gets list of all quizzes created by this user id*/
   /*Render EJS template that displays all user quizzes (both public & private). Pass in quizzes as variable.*/
+  return res.render('/quizzes' /*need to add template vars - quiz list from database*/);
 }); 
 
 module.exports = router;
