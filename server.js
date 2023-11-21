@@ -32,7 +32,7 @@ const user = require('./routes/user');
 const quiztypes = require('./routes/quiztypes');
 const quiz = require('./routes/quiz');
 const result = require('./routes/result');
-const login = require('/routes/login');
+const login = require('./routes/login');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own

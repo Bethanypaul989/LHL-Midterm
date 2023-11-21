@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const db = require('../db/connection');
+//const db = require('../db/connection');
 
 //create new quiz - path for front end to hit /createquiz
 router.get('/', (req, res) => {
