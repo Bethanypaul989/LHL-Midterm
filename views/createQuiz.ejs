@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create your quiz here!</title>
+  <link rel="stylesheet" href="/styles/create_quiz.css">
+  <script src="/vendor/jquery-3.0.0.js"></script>
+
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li> <a href="/create-quiz"> Create Quiz </a> </li>
+      <li> <a href="/prior-quiz-results"> Prior Quiz Results </a> </li>
+
+    </ul>
+  </nav>
+
+  <div id="quiz-link"></div>
+
+  <form class="create-quiz-form" id="create-quiz-form">
+    <div class="quizInfo">
+      <label for="quiz-name">Quiz Name:</label>
+      <input id="quiz-name" name="quizName" type="text" required>
+
+      <label for="quiz-description">Quiz Description:</label>
+      <textarea id="quiz-description" name="quizDescription" required></textarea>
+    </div>
+
