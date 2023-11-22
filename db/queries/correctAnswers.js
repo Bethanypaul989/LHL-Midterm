@@ -5,7 +5,12 @@ const db = require('../connection');
 
 const getCorrectAnswers = (quizId) => {
   const query = {
-    text: 'SELECT q.content AS question_content, o.option_letter AS correct_option_letter FROM questions q JOIN options o ON q.id = o.questions_id WHERE q.quizzes_id = $1 AND o.correct = TRUE;',
+    text: `SELECT q.content AS question_content, o.option_letter AS correct_option_letter
+    FROM questions q
+    JOIN options o ON q.id = o.questions_id
+    WHERE q.quizzes_id = $1 AND o.correct = TRUE
+    ORDER BY random()
+    LIMIT 3;`,
     values: [quizId],
   };
 
