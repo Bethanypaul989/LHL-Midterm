@@ -12,7 +12,7 @@ const router  = express.Router();
 //bypass login http://localhost:8080/login/1
 router.get('/:id', (req, res) => {
   res.cookie('user_id', req.params.id);
-  return res.redirect('../index');
+  return res.redirect('../');
 });
 
 module.exports = router;

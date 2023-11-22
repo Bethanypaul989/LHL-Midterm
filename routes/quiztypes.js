@@ -20,15 +20,7 @@ router.get('/:id', (req, res) => {
 
   /* Implement helper function that retrieves a list of quizzes with category Id from the database*/
   /* Render EJS template with quiz list passed in as a variable so list of quizzes of that type can be displayed */
-  return res.render('/quizzes' /*need to add template vars - quiz list from database*/);
-
-});
-
-//submit new quiz created by user - path for front end to hit /quiztypes/:id
-router.post('/:id', (req, res) => {
-  
-/* Implement helper function that adds a new quiz to the database. Return new quiz Id*/
-/* Redirect to single quiz page for quiz that was just created. Path is in the quiz.js file. Use new quiz id*/
+  return res.render('./quizzes' /*need to add template vars - quiz list from database*/);
 
 });
 
