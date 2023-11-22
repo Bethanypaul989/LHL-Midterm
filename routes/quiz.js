@@ -28,6 +28,7 @@ router.get('/:id', (req, res) => {
 //Submit quiz attempt - path for front end to hit /quiz/:id
 router.post('/:id', (req, res) => {
   const quizId = req.params.id;
+  const userAnswers = req.body;
   /*Implement helper function that returns the correct answer for each question in the quiz*/
   answerQuery.getCorrectAnswers(quizId)
   .then((answers) => {
