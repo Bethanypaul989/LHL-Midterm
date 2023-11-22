@@ -1,5 +1,5 @@
 
-const { getTypesofQuizzes } = require('../queries/getTypesofQuizzes');
+// const { getCorrectAnswers } = require('../queries/correctAnswers');
 
 
 // const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
@@ -12,10 +12,19 @@ const { getTypesofQuizzes } = require('../queries/getTypesofQuizzes');
 //   });
 
 
-getTypesofQuizzes()
-  .then(quizzes => {
-    console.log('Types of quizzes:', quizzes);
-  })
-  .catch(error => {
-    console.log('error:', error);
-  })
+// getTypesofQuizzes()
+//   .then(quizzes => {
+//     console.log('Types of quizzes:', quizzes);
+//   })
+//   .catch(error => {
+//     console.log('error:', error);
+//   })
+
+// const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
+// getCorrectAnswers(quizId)
+//   .then(answers => {
+//     console.log('Answers to questions:', answers);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
