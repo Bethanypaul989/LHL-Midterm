@@ -7,12 +7,20 @@
 
 const express = require('express');
 const router  = express.Router();
+const userQuizQuery = require('../db/queries/ListofQuizzeswithUser');
 
 // get list of public & private quizzes created by user - path for front end to hit /user/:id
 router.get('/:id', (req, res) => {
-  /*Implement helper function that gets list of all quizzes created by this user id*/
-  /*Render EJS template that displays all user quizzes (both public & private). Pass in quizzes as variable.*/
-  return res.render('./quizzes' /*need to add template vars - quiz list from database*/);
+  const userId = req.params.id;
+
+  userQuizQuery.getQuizzesByUserId(userId)
+  .then((quizzes) => {
+    return res.render('./quizzes', quizzes);
+  }).catch((error) => {
+    console.error(error);
+    // Handle errors and send an appropriate response
+    res.status(500).send('Internal Server Error');
+  });
 }); 
 
 module.exports = router;

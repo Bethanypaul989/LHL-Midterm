@@ -1,16 +1,15 @@
 
-const { getQuizResultById } = require('../queries/retrievingQuizResult');
+// const { getQuizzesByUserId } = require('../queries/ListofQuizzeswithUser');
 
 
-
-// const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
-// getQuestionsForQuiz(quizId)
-//   .then(questions => {
-//     console.log('Questions for quiz:', questions);
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
+ //const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
+ //getQuestionsForQuiz(quizId)
+  //.then(questions => {
+  //  console.log('Questions for quiz:', questions);
+  // })
+  // .catch(error => {
+  //  console.error('Error:', error);
+  // });
 
 
 // getTypesofQuizzes()
