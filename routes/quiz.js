@@ -7,20 +7,21 @@
 
 const express = require('express');
 const router  = express.Router();
-//const quizTypeQueries = require('../db/queries/helpers')
+const questionQuery = require('../db/queries/getQuestionsForQuiz')
 //const db = require('../db/connection');
 
 // Get single quiz to attempt or share url - path for front end to hit /quiz/:id
 router.get('/:id', (req, res) => {
-  //const quizId = req.params.id;
+  const quizId = req.params.id;
   //below function only gets the quiz questions, not the answer options. Need to add the answer options and then do something before rendering
-  /*quizTypeQueries. getQuestionsForQuiz(quizId)
-  .then((questions) => {*/
-    return res.render('./quizzes-show'/*, questions*/);
- /* });*/
-  /*Implement helper function that retrieves single quiz with matching Id from the database*/
-  /*Render EJS template for single quiz page. Pass quiz data from database in as a variable*/
-
+  questionQuery.getQuestionsForQuiz(quizId)
+  .then((questions) => {
+    return res.render('./quizzes-show', questions);
+  }).catch((error) => {
+    console.error(error);
+    // Handle errors and send an appropriate response
+    res.status(500).send('Internal Server Error');
+  });
 });
 
 //Submit quiz attempt - path for front end to hit /quiz/:id
