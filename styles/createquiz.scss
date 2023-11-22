@@ -3,12 +3,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: black;
 }
 
   /* style the header */
   h1 {
     font-size: 36px;
     margin: 30px 0 20px;
+    color: aqua;
   }
 
   p {
@@ -20,7 +22,7 @@ body {
 /* style the navigation bar */
 nav {
   background-color: #421818;
-  color: rgb(0, 0, 0);
+  color: rgb(29, 0, 0);
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
@@ -123,7 +125,7 @@ nav a {
 }
 
 #public-quizzes a {
-  color: #333;
+  color: #570101;
   text-decoration: none;
   font-weight: bold;
 }
