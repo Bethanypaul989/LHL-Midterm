@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const questionQuery = require('../db/queries/getQuestionsForQuiz')
+const questionQuery = require('../db/queries/getQuestionsForQuiz');
 //const db = require('../db/connection');
 
 // Get single quiz to attempt or share url - path for front end to hit /quiz/:id
