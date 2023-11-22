@@ -1,5 +1,5 @@
 
-// const { getCorrectAnswers } = require('../queries/correctAnswers');
+const { getQuizzesByUserId } = require('../queries/ListofQuizzeswithUser');
 
 
 // const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
@@ -28,3 +28,8 @@
 //   .catch(error => {
 //     console.error('Error:', error);
 //   });
+
+// const userId = 1;
+// getQuizzesByUserId(userId)
+//   .then(quizzes => console.log('Quizzes for user:', quizzes))
+//   .catch(error => console.error('Error:', error.message));
