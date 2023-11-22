@@ -1,7 +1,7 @@
 
 //const { getQuizzesByUserId } = require('../queries/ListofQuizzeswithUser');
 //const { getQuestionsForQuiz } = require('../queries/getQuestionsForQuiz');
-
+//const { getCorrectAnswers } = require('../queries/correctAnswers');
 
  //const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
  //getQuestionsForQuiz(quizId)
@@ -21,8 +21,8 @@
 //     console.log('error:', error);
 //   })
 
-// const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
-// getCorrectAnswers(quizId)
+//const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
+//  getCorrectAnswers(quizId)
 //   .then(answers => {
 //     console.log('Answers to questions:', answers);
 //   })
