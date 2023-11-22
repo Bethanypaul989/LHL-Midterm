@@ -14,4 +14,12 @@ router.get('/', (req, res) => {
   return res.render('./createQuiz');
 });
 
+//submit new quiz created by user - path for front end to hit /createquiz
+router.post('/', (req, res) => {
+  
+  /* Implement helper function that adds a new quiz to the database. Return new quiz Id*/
+  /* Redirect to single quiz page for quiz that was just created. Path is in the quiz.js file. Use new quiz id*/
+  
+  });
+
 module.exports = router;
