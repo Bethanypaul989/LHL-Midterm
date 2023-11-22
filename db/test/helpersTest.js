@@ -1,14 +1,15 @@
 
 // const { getQuizzesByUserId } = require('../queries/ListofQuizzeswithUser');
+//const { getQuestionsForQuiz } = require('../queries/getQuestionsForQuiz');
 
 
  //const quizId = 2; // Replace with the actual quiz ID you want to retrieve questions for
  //getQuestionsForQuiz(quizId)
   //.then(questions => {
-  //  console.log('Questions for quiz:', questions);
-  // })
-  // .catch(error => {
-  //  console.error('Error:', error);
+    //console.log('Questions for quiz:', questions);
+   //})
+   //.catch(error => {
+   // console.error('Error:', error);
   // });
 
 
