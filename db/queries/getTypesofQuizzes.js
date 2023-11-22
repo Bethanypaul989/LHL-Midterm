@@ -3,9 +3,13 @@
 const db = require('../connection');
 
 const getTypesofQuizzes = () => {
-  return db.query('SELECT * FROM quizzes;')
+  return db.query('SELECT name FROM quizzes;')
     .then(data => {
       return data.rows;
+    })
+    .catch(error => {
+      console.error('Error retrieving types of quizzes', error);
+      throw error;
     });
 };
 
