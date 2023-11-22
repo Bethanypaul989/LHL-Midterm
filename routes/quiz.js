@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
   //below function only gets the quiz questions, not the answer options. Need to add the answer options and then do something before rendering
   questionQuery.getQuestionsForQuiz(quizId)
   .then((questions) => {
-    return res.render('./quizzes-show', questions);
+    return res.render('quizzes-show', questions);
   }).catch((error) => {
     console.error(error);
     // Handle errors and send an appropriate response
