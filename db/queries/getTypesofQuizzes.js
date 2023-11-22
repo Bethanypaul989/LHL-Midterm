@@ -10,7 +10,7 @@ const getTypesofQuizzes = (quizId) => {
     values: [quizId],
   };
 
-  return db.query('SELECT name FROM quizzes;')
+  return db.query(query)
     .then(data => {
       return data.rows;
     })
