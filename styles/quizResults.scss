@@ -1,6 +1,32 @@
-/* public/styles/main.css */
+// styles/quizResults.scss
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
   text-align: center;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #0066cc;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0066cc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #004080;
 }

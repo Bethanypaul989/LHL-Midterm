@@ -5,7 +5,7 @@ body {
   align-items: center;
   min-height: 100vh;
 
-  background: rgb(159, 94, 192);
+  background: rgb(47, 3, 69);
 }
 
 .quiz-card {
@@ -29,4 +29,55 @@ body {
 
 .incorrect-answer {
   border:red solid 1px;
+}
+
+/* styles/mains.scss */
+nav {
+  background-color: rgb(86, 0, 161);
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #380e62;
+}
+
+/* styles/mains.scss */
+h1 {
+  font-size: 2em;
+  color: rgb(112, 0, 168);
+}
+
+p {
+  color: #666666;
+}
+
+
+@media (max-width: 600px) {
+  /* Add styles for smaller screens here */
+  nav {
+      font-size: 14px;
+  }
+
+  h1 {
+      font-size: 1.5em;
+  }
 }
