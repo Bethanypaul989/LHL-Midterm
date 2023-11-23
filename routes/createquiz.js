@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 //submit new quiz created by user - path for front end to hit /createquiz
 router.post('/', (req, res) => {
   console.log(req.body);
+  return res.redirect('../');
   /*createQuery.makeNewQuiz(req.body)
   .then((result) => {
     console.log('result is', result);
