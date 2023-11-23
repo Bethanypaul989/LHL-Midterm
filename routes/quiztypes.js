@@ -19,8 +19,9 @@ router.get('/:id', (req, res) => {
   const categoryId = req.params.id;
   quizQueries.getTypesofQuizzes(categoryId)
   .then((questions) => {
+    const templatevars = {questions:questions}
     console.log(questions);
-    return res.render('quizzes', questions);
+    return res.render('quizzes',templatevars);
   }).catch((error) => {
     console.error(error);
     // Handle errors and send an appropriate response
