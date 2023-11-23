@@ -17,7 +17,7 @@ const getTypesofQuizzes = (quizId) => {
   LEFT JOIN
     options o ON q.id = o.questions_id
   WHERE
-    quizzes.id = 1
+    quizzes.id = $1
   GROUP BY
     q.id, q.content
   ORDER BY
