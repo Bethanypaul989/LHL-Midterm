@@ -2,39 +2,49 @@
 <html lang="en">
 
 <head>
-  <title>Take a quiz!</title>
+    <title>Take a quiz!</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
 
-  <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/quizzes.js"></script>
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/quizzes.js"></script>
 </head>
 
 <body>
-  <header>
+    <header>
 
-  </header>
-  <main class="container">
-    <h1>Quizzlet</h1>
-    <p>Quizzlet is a quiz application that allows you to create and take quizzes.</p>
-    <p>Click on one of the available quizzes below to start or click here to <a href="/createquiz" class="btn">create a quiz.</a></p>
+    </header>
+    <main class="container">
+        <h1>Quizzlet</h1>
+        <p>Quizzlet is a quiz application that allows you to create and take quizzes.</p>
+        <p>Click on one of the available quizzes below to start or click here to <a href="/createquiz" class="btn">create a quiz.</a></p>
 
-    <section>
-      <h2>Available Quizzes</h2>
+        <section>
+            <h2>Available Quizzes</h2>
+            <div id="quizzes">
+                <% for (let i = 0; i < questions.length; i++) { %>
+                    <div>
+                        <h2>Question <%= i + 1 %>:</h2>
+                        <p><%= questions[i].question %></p>
 
-      <div id="quizzes">
-
-      </div>
-
-    </section>
-  </main>
+                        <h3>Answers:</h3>
+                        <ul>
+                            <% for (let j = 0; j < questions[i].answers.length; j++) { %>
+                                <li><%= questions[i].answers[j] %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
