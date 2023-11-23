@@ -9,10 +9,11 @@ const express = require('express');
 const router  = express.Router();
 const resultQuery = require('../db/queries/retrievingQuizResult');
 
+
 // get user quiz attempt result - url can be shared - path for front end to hit /result/:id
 router.get('/:id', (req, res) => {
   const resultId = req.params.id;
-
+  
   resultQuery.getQuizResultById(resultId)
   .then((result) => {
     console.log('result is', result);
