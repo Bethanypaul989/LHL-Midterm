@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const resultQuery = require('../db/queries/retrievngQuizResult');
+const resultQuery = require('../db/queries/retrievingQuizResult');
 
 // get user quiz attempt result - url can be shared - path for front end to hit /result/:id
 router.get('/:id', (req, res) => {
@@ -15,8 +15,10 @@ router.get('/:id', (req, res) => {
 
   resultQuery.getQuizResultById(resultId)
   .then((result) => {
-    const score = result.score / 3 * 100;
-    return res.render('quizResults', score);
+    console.log('result is', result);
+    const quizScore = Number(result[0].score) / 3 * 100;
+    const templateVars = { score: quizScore };
+    return res.render('quizResults', templateVars);
   }).catch((error) => {
     console.error(error);
     // Handle errors and send an appropriate response
