@@ -2,38 +2,35 @@
   <main class="container">
     <section>
 
-      <% if (questions) { %>
+      <% if (questions && questions.length > 0) { %>
         <form id="quiz" action="/quiz/:id" method="POST">
-          <h2><%= questions.title %></h2>
-          <p><%= questions.description %></p>
-          <p>Created by: <%= questions.creator %></p>
 
           <% console.log("Questions:", questions); %>
 
-          <% if (questions.questions) { %>
-            <% questions.questions.forEach(question => { %>
-              <% console.log("Question:", question); %>
-              <h3><%= question.question %></h3>
-              <fieldset id="<%= `question-${question.question_id}` %>" data-correctanswer="<%= question.correct_answer %>">
+          <% questions.forEach(question => { %>
+            <h3><%= question.question_content %></h3>
+            <fieldset id="<%= `question-${question.question_id}` %>" data-correctanswer="<%= question.correct_answer %>">
 
-                <% console.log("Options:", question.options); %>
+              <% if (question.option_a && question.option_b && question.option_c) { %>
+                <input required type="radio" id="<%= `${question.option_a}-${question.question_id}` %>" name="<%= `question-${question.question_id}` %>" value="<%= question.option_a %>">
+                <label for="<%= `${question.option_a}-${question.question_id}` %>">
+                  <%= question.option_a %>
+                </label><br>
 
-                <% if (question.options && question.options.length > 0) { %>
-                  <% question.options.forEach(option => { %>
-                    <% console.log("Option:", option); %>
-                    <input required type="radio" id="<%= `${option.option}-${option.id}` %>" name="<%= `question-${question.question_id}` %>" value="<%= option.option %>">
-                    <label for="<%= `${option.option}-${option.id}` %>">
-                      <%= option.option %>
-                    </label><br>
-                  <% })%>
-                <% } else { %>
-                  <p>No options available for this question.</p>
-                <% } %>
-              </fieldset>
-            <% })%>
-          <% } else { %>
-            <p>No questions available for this quiz.</p>
-          <% } %>
+                <input required type="radio" id="<%= `${question.option_b}-${question.question_id}` %>" name="<%= `question-${question.question_id}` %>" value="<%= question.option_b %>">
+                <label for="<%= `${question.option_b}-${question.question_id}` %>">
+                  <%= question.option_b %>
+                </label><br>
+
+                <input required type="radio" id="<%= `${question.option_c}-${question.question_id}` %>" name="<%= `question-${question.question_id}` %>" value="<%= question.option_c %>">
+                <label for="<%= `${question.option_c}-${question.question_id}` %>">
+                  <%= question.option_c %>
+                </label><br>
+              <% } else { %>
+                <p>No options available for this question.</p>
+              <% } %>
+            </fieldset>
+          <% }) %>
 
           <p id="scoreboard"></p>
           <button type="submit" id="submit-quiz">Submit!</button>
