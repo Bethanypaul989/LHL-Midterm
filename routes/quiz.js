@@ -7,7 +7,12 @@
 
 const express = require('express');
 const router  = express.Router();
+const cookieParser = require('cookie-parser');
+
+router.use(cookieParser());
+
 const questionQuery = require('../db/queries/getQuestionsForQuiz');
+const resultQuery = require('../db/queries/resultId');
 //const answerQuery = require('../db/queries/correctAnswers');
 //const db = require('../db/connection');
 
@@ -29,8 +34,14 @@ router.get('/:id', (req, res) => {
 
 //Submit quiz attempt - path for front end to hit /quiz/:id
 router.post('/:id', (req, res) => {
-  const quizId = req.params.id;
-
+  //const quizId = req.params.id;
+  const userId = req.cookies.user_id;
+  const result = {
+    user_id: userId,
+    score: 2,
+    quizzes_id: 2
+  }
+  console.log(result);
   console.log(req.body);
 
   //const userAnswers = req.body;
@@ -46,8 +57,17 @@ router.post('/:id', (req, res) => {
   /*Check the submitted answers to see how many match the correct answers*/
   /*Return number of correct answers*/
   /*Implement helper function to update the database with the user's quiz score and return a result id*/
-  /*Redirect to the result page (path is in the user.js file) using the result id as a url parameter*/
-  //extra comment
+  resultQuery.updateQuizResult(result)
+  .then((response) => {
+    const responseId = response;
+    console.log("responseId", responseId);
+    return res.redirect(`/result/${responseId}`);
+  }).catch((error) => {
+    console.error(error);
+    // Handle errors and send an appropriate response
+    res.status(500).send('Internal Server Error');
+  });
+
 });
 
 module.exports = router;

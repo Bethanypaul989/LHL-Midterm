@@ -23,7 +23,6 @@ const updateQuizResult = (quizResult) => {
   const query = {
     text: `INSERT INTO quiz_result (quizzes_id, user_id, score)
     VALUES ($1, $2, $3)
-    ON CONFLICT (quizzes_id, user_id) DO UPDATE SET score = $3
     RETURNING id`,
     values: [quizzes_id, user_id || null, score]
   };
