@@ -59,7 +59,8 @@ router.post('/:id', (req, res) => {
   /*Implement helper function to update the database with the user's quiz score and return a result id*/
   resultQuery.updateQuizResult(result)
   .then((response) => {
-    const responseId = response;
+    console.log(response);
+    const responseId = response[0].id;
     console.log("responseId", responseId);
     return res.redirect(`/result/${responseId}`);
   }).catch((error) => {
