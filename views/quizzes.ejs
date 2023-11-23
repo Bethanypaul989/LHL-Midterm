@@ -29,19 +29,25 @@
         <section>
             <h2>Available Quizzes</h2>
             <div id="quizzes">
-                <% for (let i = 0; i < questions.length; i++) { %>
-                    <div>
-                        <h2>Question <%= i + 1 %>:</h2>
-                        <p><%= questions[i].question %></p>
+              <% for (let i = 0; i < questions.length; i++) { %>
+                <div>
+                    <h2>Question <%= i + 1 %>:</h2>
+                    <p><%= questions[i].question %></p>
 
-                        <h3>Answers:</h3>
-                        <ul>
-                            <% for (let j = 0; j < questions[i].answers.length; j++) { %>
-                                <li><%= questions[i].answers[j] %></li>
-                            <% } %>
-                        </ul>
-                    </div>
-                <% } %>
+                    <h3>Options:</h3>
+                    <ul>
+                        <% if (questions[i].option_a) { %>
+                            <li><%= questions[i].option_a %></li>
+                        <% } %>
+                        <% if (questions[i].option_b) { %>
+                            <li><%= questions[i].option_b %></li>
+                        <% } %>
+                        <% if (questions[i].option_c) { %>
+                            <li><%= questions[i].option_c %></li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
             </div>
         </section>
     </main>
