@@ -28,10 +28,19 @@
       <input id="quiz-name" name="quizName" type="text" required>
 
 
-    <div class="category-buttons">
-      <button onclick="filterItems('category1')">Math</button>
-      <button onclick="filterItems('category1')">Science</button>
-      <button onclick="filterItems('category1')">Tech</button>
+      <div class="category-buttons">
+        <a href="/quiztypes/1">
+          <button onclick="filterItems('category1')">Math</button>
+        </a>
+
+        <a href="/quiztypes/2">
+          <button onclick="filterItems('category2')">Science</button>
+        </a>
+
+        <a href="/quiztypes/3">
+          <button onclick="filterItems('category3')">Tech</button>
+        </a>
+      </div>
 
     <div class="QuizVisibility">
       <label>Quiz Visibility:</label>
