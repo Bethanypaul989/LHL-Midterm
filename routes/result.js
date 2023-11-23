@@ -7,13 +7,21 @@
 
 const express = require('express');
 const router  = express.Router();
+const resultQuery = require('../db/queries/retrievngQuizResult');
 
 // get user quiz attempt result - url can be shared - path for front end to hit /result/:id
 router.get('/:id', (req, res) => {
   const resultId = req.params.id;
-  /*Implement helper function that retrieves quiz result from database based on result id*/
-  /*Render result EJS template with quiz result passed in as a variable*/
-  return res.render('quizResults' /*need to add template vars - quiz list from database*/);
+
+  resultQuery.getQuizResultById(resultId)
+  .then((result) => {
+    const score = result.score / 3 * 100;
+    return res.render('quizResults', score);
+  }).catch((error) => {
+    console.error(error);
+    // Handle errors and send an appropriate response
+    res.status(500).send('Internal Server Error');
+  });
 }); 
 
 module.exports = router;
