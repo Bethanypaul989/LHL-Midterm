@@ -4,24 +4,34 @@ body {
   margin: 0;
   padding: 0;
   color: black;
+  animation: gradientAnimation 5s infinite alternate;
 }
 
-  /* style the header */
-  h1 {
-    font-size: 36px;
-    margin: 30px 0 20px;
-    color: aqua;
+@keyframes gradientAnimation {
+  0% {
+    background: #fafafa;
   }
-
-  p {
-    font-size: 18px;
-    margin: 0 0 30px;
+  100% {
+    background: rgb(59, 0, 100);
   }
+}
 
+/* style the header */
+h1 {
+  font-size: 36px;
+  margin: 30px 0 20px;
+  color: rgb(0, 0, 0);
+}
+
+p {
+  font-size: 20px;
+  margin: 0 0 30px;
+
+}
 
 /* style the navigation bar */
 nav {
-  background-color: #421818;
+  animation: gradientAnimation 5s infinite alternate;
   color: rgb(29, 0, 0);
   display: flex;
   justify-content: space-between;
@@ -37,10 +47,11 @@ nav ul {
 nav li {
   display: inline-block;
   margin-right: 20px;
+
 }
 
 nav a {
-  color: rgb(251, 129, 129);
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
@@ -57,6 +68,7 @@ nav a {
 .quizInfo input,
 .quizInfo textarea {
   margin-bottom: 10px; /* Add some vertical spacing between the items */
+  max-width: 100;
 }
 
 /* Style the radio buttons and their outlying container */
@@ -65,11 +77,13 @@ nav a {
   align-items: center;
   margin-top: 20px;
   padding-left: 20px;
+  max-width: 100;
 }
 
 .QuizVisibility label,
 .QuizVisibility input {
   margin-right: 10px;
+  max-width: 100;
 }
 
 .publicPrivateButton {
@@ -83,7 +97,7 @@ nav a {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
-  max-width: 25%;
+  max-width: 100%;
 }
 
 .answers {
@@ -91,7 +105,7 @@ nav a {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
-  max-width: 25%;
+  max-width: 100%;
 }
 
 .buttons {
@@ -100,9 +114,8 @@ nav a {
   align-items: center;
   margin-top: 20px;
   padding-left: 20px;
-  max-width: 25%;;
+  max-width: 100%;
 }
-
 
 /* style the prior quizzes section */
 #public-quizzes {
@@ -125,7 +138,7 @@ nav a {
 }
 
 #public-quizzes a {
-  color: #570101;
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
 }
@@ -133,3 +146,53 @@ nav a {
 #public-quizzes a:hover {
   text-decoration: underline;
 }
+
+/* Example form styling */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  border-radius: 22px;
+  max-width: 100%;
+}
+
+button {
+  background-color: #643575;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+button:hover {
+  background-color: #643575;
+}
+
+#add-question-btn {
+  margin-top: 20px; /* Adjust the value as needed */
+}
+
+/* Adjust the font size and padding for the input field */
+#quiz-name {
+  font-size: 18px; /* Adjust the font size as needed */
+  padding: 10px;   /* Adjust the padding as needed */
+  max-width: 100%;
+  width: 400px; /* Adjust the width as needed */
+}
+
+
