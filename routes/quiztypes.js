@@ -19,8 +19,9 @@ router.get('/:id', (req, res) => {
   const categoryId = req.params.id;
   quizQueries.getTypesofQuizzes(categoryId)
   .then((questions) => {
-    console.log("This is the data being passed to the fronte end. Variable name = questions", questions);
-    return res.render('quizzes', questions);
+    const templateVars = { questions: questions };
+    console.log("This is the data being passed to the fronte end. Variable name = questions", templateVars);
+    return res.render('quizzes', templateVars);
   }).catch((error) => {
     console.error(error);
     // Handle errors and send an appropriate response
