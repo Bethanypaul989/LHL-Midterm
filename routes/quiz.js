@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
   //below function only gets the quiz questions, not the answer options. Need to add the answer options and then do something before rendering
   questionQuery.getQuestionsForQuiz(quizId)
   .then((questions) => {
-    console.log(questions);
+    console.log("This is the data being passed to the front end. Variable name = questions", questions);
     return res.render('quizzes-show', questions);
   }).catch((error) => {
     console.error(error);
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 router.post('/:id', (req, res) => {
   const quizId = req.params.id;
 
-
+  console.log(req.body);
 
   //const userAnswers = req.body;
   /*Implement helper function that returns the correct answer for each question in the quiz*/
