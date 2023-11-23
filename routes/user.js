@@ -15,7 +15,7 @@ router.get('/:id', (req, res) => {
 
   userQuizQuery.getQuizzesByUserId(userId)
   .then((quizzes) => {
-    return res.render('./quizzes', quizzes);
+    return res.render('quizzes', quizzes);
   }).catch((error) => {
     console.error(error);
     // Handle errors and send an appropriate response

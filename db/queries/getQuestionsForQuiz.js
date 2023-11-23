@@ -10,19 +10,19 @@ const getQuestionsForQuiz = (quizId) => {
     MAX(CASE WHEN o.option_letter = 'a' THEN o.content END) AS option_a,
     MAX(CASE WHEN o.option_letter = 'b' THEN o.content END) AS option_b,
     MAX(CASE WHEN o.option_letter = 'c' THEN o.content END) AS option_c
-  FROM
+    FROM
     questions q
-  JOIN
+    JOIN
     quizzes ON q.quizzes_id = quizzes.id
-  LEFT JOIN
+    LEFT JOIN
     options o ON q.id = o.questions_id
-  WHERE
+    WHERE
     quizzes.id = $1
-  GROUP BY
+    GROUP BY
     q.id, q.content
-  ORDER BY
+    ORDER BY
     q.question_order, random()
-  LIMIT 3;`,
+    LIMIT 3;`,
     values: [quizId],
   };
 
@@ -38,13 +38,3 @@ const getQuestionsForQuiz = (quizId) => {
 
 module.exports = { getQuestionsForQuiz };
 
-// pool.query(`
-// SELECT id, name, cohort_id
-// FROM students
-// LIMIT 5;
-// `)
-// .then(res => {
-//   res.rows.forEach(user => {
-//     console.log(`${user.name} has an id of ${user.id} and was in the ${user.cohort_id} cohort`);
-//   })
-// });
