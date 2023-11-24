@@ -1,0 +1,43 @@
+/* styles/quizzes.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  color: #ef0000;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #007bff;
+}
+
+.quiz-item {
+  margin-bottom: 20px;
+}
+
+.question-text {
+  font-weight: bold;
+}
+
+.options-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.options-list li {
+  margin-bottom: 5px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+}
