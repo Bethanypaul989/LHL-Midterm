@@ -1,64 +1,159 @@
-/* quizzes-show.css */
-
-/* Body styles */
 body {
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+    animation: gradientAnimation 5s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background: #fafafa;
+    }
+    100% {
+        background: rgb(59, 0, 100);
+    }
+}
+
+
+
+.quiz-card {
+  border: 1px solid #2e0404;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #3d0e0e;
+  box-shadow: 0 0 5px #ccc;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px #ccc;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.incorrect-answer {
+  border:rgb(53, 5, 5) solid 1px;
+}
+
+/* styles/mains.scss */
+nav {
+  background-color:#643575;
+  border-color: #000000;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  border: 3px solid #000000; /* Border color */
+
+  outline: none; /* Remove default outline */
+}
+
+ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  overflow: hidden;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
+li {
+  float: left;
 }
 
-/* Form styles */
-form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+li a:hover {
+  background-color: #643575;
 }
 
-fieldset {
-  border: none;
-  margin-bottom: 20px;
-}
-
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-label {
-  cursor: pointer;
+/* styles/mains.scss */
+h1 {
+  font-size: 2em;
+  color: rgb(112, 0, 168);
 }
 
 p {
-  margin-top: 10px;
-  color: #888;
+  color: #060606;
+  border-color: #000000;
 }
 
-#scoreboard {
-  font-weight: bold;
+
+@media (max-width: 600px) {
+  /* Add styles for smaller screens here */
+  nav {
+      font-size: 14px;
+  }
+
+  h1 {
+      font-size: 1.5em;
+  }
 }
 
-#submit-quiz {
+div{
+  color: #000000;
+}
+
+.button-container {
+  text-align: center; /* Center the buttons within the container (optional) */
+}
+.my-button {
+  display: block;
+  margin: 10px 0; /* Add some vertical margin between buttons */
+  padding: 10px;
+  width: 150px; /* Set a fixed width or adjust as needed */
+  text-align: center; /* Center the text within the button */
+  background-color: #643575;
+  color: #000000;
+  border: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.my-button:hover {
+  background-color: #643575;
+}
+
+/* Example styling for a button with an outline */
+.my-button {
+  display: inline-block;
   padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* Border properties for the outline */
+  border: 3px solid #000000; /* Border color */
+  color: #ffffff; /* Text color */
+  border-radius: 5px; /* Border radius for rounded corners */
+}
+
+/* Style the submit button */
+#submit-quiz {
   background-color: #643575;
   color: #fff;
-  border: none;
-  border-radius: 3px;
+  padding: 10px 15px;
+  border: 2px solid #000000; /* Add a black border */
+  border-radius: 9px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 #submit-quiz:hover {
-  background-color: #512b55;
+  background-color: #512761;
 }
