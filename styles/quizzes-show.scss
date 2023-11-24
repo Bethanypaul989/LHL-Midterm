@@ -1,0 +1,64 @@
+/* quizzes-show.css */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ff0000;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Form styles */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+label {
+  cursor: pointer;
+}
+
+p {
+  margin-top: 10px;
+  color: #888;
+}
+
+#scoreboard {
+  font-weight: bold;
+}
+
+#submit-quiz {
+  padding: 10px 20px;
+  background-color: #643575;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit-quiz:hover {
+  background-color: #512b55;
+}
