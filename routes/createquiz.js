@@ -7,8 +7,8 @@
 
 const express = require('express');
 const router  = express.Router();
-//const createQuery = require('../db/queries/newQuiz');
-//const db = require('../db/connection');
+const createQuery = require('../db/queries/newQuiz');
+const db = require('../db/connection');
 
 //create new quiz - path for front end to hit /createquiz
 router.get('/', (req, res) => {
@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
     // Handle errors and send an appropriate response
     res.status(500).send('Internal Server Error');
   });*/
-  
+
   });
 
 module.exports = router;
